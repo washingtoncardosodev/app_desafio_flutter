@@ -106,7 +106,7 @@ mixin _$PersonagemController on _PersonagemControllerBase, Store {
       ActionController(name: '_PersonagemControllerBase');
 
   @override
-  dynamic getPersonagens() {
+  Future<List<PersonagemModel>>? getPersonagens() {
     final _$actionInfo = _$_PersonagemControllerBaseActionController
         .startAction(name: '_PersonagemControllerBase.getPersonagens');
     try {

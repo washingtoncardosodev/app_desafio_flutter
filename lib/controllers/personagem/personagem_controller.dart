@@ -29,7 +29,7 @@ abstract class _PersonagemControllerBase with Store {
   bool isError = false;
 
   @action
-  getPersonagens() {
+  Future<List<PersonagemModel>>? getPersonagens() {
     isLoading = true;
     if (!firstCall) {
       if (lastTotalReturnedItems < itemsPerPage) {
@@ -48,6 +48,7 @@ abstract class _PersonagemControllerBase with Store {
         personagens.add(element!);
       });
       isLoading = false;
+      return personagens;
     }).catchError((onError) {
       isError = true;
     });
